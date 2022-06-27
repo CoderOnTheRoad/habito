@@ -5,6 +5,11 @@ body{
     background-position: center;
     background-size: 100%;
     color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 /* .bg-dark{
     /* background-color:#151E30; */
@@ -12,3 +17,31 @@ body{
     background-size: 100% auto;
     background-repeat: no-repeat; */
 /* }  */
+
+.habit-container{
+    overflow-y: scroll;
+    width:80vw;
+    height: 60vh;
+    margin-top:auto;
+    display:flex;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.habit-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .habit-container{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  input[type="date"]:in-range::-webkit-datetime-edit-year-field, input[type="date"]:in-range::-webkit-datetime-edit-month-field, input[type="date"]:in-range::-webkit-datetime-edit-day-field, input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}

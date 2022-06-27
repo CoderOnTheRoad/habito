@@ -5,7 +5,8 @@ const userSchema=mongoose.Schema({
         required:true,
     },
     userHabits:[{
-        type:String,
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Habits",
     }]
 },{timeStamps:true});
 
