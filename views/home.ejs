@@ -1,0 +1,14 @@
+
+<% if(locals.userCookie){%>
+    <!-- <h3>Hi<%=locals.userEmail%> </h3> -->
+    <div style="margin-top:50px;margin-left: auto;margin-right: auto;display:flex;width: 60vw;height: 20vh; justify-content: center;">
+        <form class="row g-3" method="post" action="/habit/addHabit">
+            <div class="col-auto">
+            <input type="password" class="form-control" placeholder="Add a Habit To Track" style="background:transparent;border:1px solid black" name="habit">
+            </div>
+            <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">ADD</button>
+            </div>
+        </form>
+    </div>
+<% } %>  

@@ -1,0 +1,14 @@
+body{
+    background-image: url("../images/background2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+    color: white;
+}
+/* .bg-dark{
+    /* background-color:#151E30; */
+    /* background-image: url("../images/background3.jpg") !important;
+    background-size: 100% auto;
+    background-repeat: no-repeat; */
+/* }  */
