@@ -20,7 +20,10 @@
                     </div>
                     <div style="width:40vw ;">
                         <form action="/habit/executeHabit/<%=i.id%>" method="post" style="display:flex;flex-direction: row;flex-wrap: nowrap;justify-content: space-around;align-items: center;">
-                        <input type="date" style="background:transparent; color:white;outline: none;border: 0px;" placeholder="Date" aria-placeholder="Date" name="date" required>
+                        <!-- <input type="date" style="background:transparent; color:white;outline: none;border: 0px;" placeholder="Date" aria-placeholder="Date" name="date" required> -->
+                        <select class="form-select" aria-label="Default select example" style="width:35%;background:transparent;color:pink !important;" name="date" id="date">
+
+                        </select>
                         <select class="form-select" aria-label="Default select example" style="width:25%;background:transparent;color:pink !important;" name="status">
                             <option selected value="NOT_SET">NOT_SET</option>
                             <option value="done">DONE</option>
@@ -35,3 +38,4 @@
         <% } %>  
     </div>
 <% } %>  
+<script src="/js/home.js"></script>

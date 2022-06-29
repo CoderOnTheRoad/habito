@@ -9,6 +9,6 @@ module.exports.home=async function(req,res){
         return res.render("home",{userCookie:userCookie,userEmail:userEmail,userHabits:habits.userHabits});
     }
 
-    return res.render("home");
+    return res.render("home",{extractScripts:true});
     // return res.render("home.ejs");
 }
