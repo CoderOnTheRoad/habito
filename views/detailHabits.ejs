@@ -1,14 +1,15 @@
+<p style="display:none" id="tableData"><%=JSON.stringify(locals.userHabits)%></p>
 <table class="table">
   <thead class="thead-dark">
     <tr id="week-dates">
-      <!-- <th scope="col">#</th>
-      <th scope="col">First</th>
+      <th scope="col">#</th>
+      <!-- <th scope="col">First</th>
       <th scope="col">Last</th>
       <th scope="col">Handle</th> -->
     </tr>
   </thead>
-  <tbody>
-    <tr>
+  <tbody id="habit-table-body">
+    <!-- <tr>
       <th scope="row">1</th>
       <td>Mark</td>
       <td>Otto</td>
@@ -25,6 +26,7 @@
       <td>Larry</td>
       <td>the Bird</td>
       <td>@twitter</td>
-    </tr>
+    </tr> -->
   </tbody>
 </table>
+<script src="/js/detailHabits.js"></script>

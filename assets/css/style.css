@@ -45,3 +45,19 @@ body{
   input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
+td,th{
+  text-align: center;
+}
+td{
+  transition: all 0.5s ease-in-out;
+}
+.status-none{
+  background-color: grey !important;
+  
+}
+.status-done{
+  background-color: green !important;
+}
+.status-not-done{
+  background-color: red !important;
+}

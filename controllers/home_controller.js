@@ -1,5 +1,6 @@
 const Users= require("../models/Users");
 
+//home controller
 module.exports.home=async function(req,res){
     const userCookie=req.cookies.userCookie;
     const userEmail=req.cookies.userEmail;

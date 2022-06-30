@@ -1,11 +1,13 @@
 <nav class="navbar navbar-dark bg-dark" style="width:100vw ;position:sticky;top:0px;">
     <div class="container-fluid">
-      <a class="navbar-brand">Navbar</a>
+      <a class="navbar-brand" href="/">Navbar</a>
       <% if(locals.userCookie){ %>
         <form class="d-flex" role="search" method="post" action="/user/logOut">
           <button class="btn btn-outline-success" type="submit">Logout</button>
         </form>
+        <% if(!locals.detailView){%> 
         <a href="/habit/detailView"><button>Detail View</button></a>
+        <% } %> 
       <% }else{ %>  
       <form class="d-flex" role="search" method="post" action="/user/signInSignUp">
         <input class="form-control me-2" type="search" placeholder="Enter Your Email" aria-label="Search" name="email">
