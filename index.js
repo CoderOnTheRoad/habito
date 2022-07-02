@@ -1,8 +1,8 @@
 const express=require("express");
 const app=express();
-const port =3000;
-const expressejslayouts=require("express-ejs-layouts");
-const cookieParser=require("cookie-parser");
+const port =3000; // in this port app will run
+const expressejslayouts=require("express-ejs-layouts");//using express ejs layout to set up a layout of the app
+const cookieParser=require("cookie-parser");//requiring cookie parser
 const db=require("./config/mongoose");
 
 app.set("view engine","ejs");//set the ejs as view engine

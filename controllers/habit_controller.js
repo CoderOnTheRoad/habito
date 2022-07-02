@@ -7,7 +7,7 @@ module.exports.addHabit= async function(req,res){
         const id=req.cookies.userCookie;
         const habitName = req.body.habit;
         const user=await Users.findById(id);
-        console.log(user);
+        // console.log(user);
         const habit=await new Habits({
             habitName:habitName,
             user:user._id,
@@ -35,7 +35,7 @@ module.exports.executeHabit=async function(req,res){
     const executionStatus=req.body.status;
     const today=new Date(new Date().toISOString().slice(0,10));
     const diff=dateDiffInDays(dateOfExecution,today);
-    console.log(diff);
+    // console.log(diff);
     if(diff<=6){
         const userID=req.cookies.userCookie;
         const habit=await Habits.findById(habitID);
@@ -59,9 +59,9 @@ module.exports.detailView= async function(req,res){
     const userId=req.cookies.userCookie;
     if(userId){
         const userDetails=await Users.findById(userId).populate("userHabits");
-        console.log(userDetails);
+        // console.log(userDetails);
         const userHabits=userDetails.userHabits;
-        console.log(userHabits);
+        // console.log(userHabits);
         return res.render("detailHabits",{userCookie:userId,userHabits:userHabits,detailView:true});
     }
     return res.redirect("/");
@@ -95,7 +95,7 @@ module.exports.updateStatus= async function(req,res){
     const habitID=req.query.habitID;
     const habit=await Habits.findById(habitID);
     const habitDateAndStatusArr=habit.dateAndStatus;
-    console.log(habitDateAndStatusArr);
+    // console.log(habitDateAndStatusArr);
     if(habitStatus=="None"){
         changeStatusToA("Done",habitDateAndStatusArr,date,habit,res);
     }else if (habitStatus=="Not done"){
@@ -104,4 +104,23 @@ module.exports.updateStatus= async function(req,res){
         changeStatusToA("Not done",habitDateAndStatusArr,date,habit,res);
     }
 
+}
+
+
+module.exports.deleteHabit=async function(req,res){
+    const habitID=req.params.habitID;
+    const userID = req.cookies.userCookie;
+    //delete the habit from the habit array of user
+    const user=await Users.findById(userID);
+    const habitsArray=user.userHabits;
+    const index=habitsArray.indexOf(habitID);
+    if(index==-1){
+        console.log("the Habit does not exist");
+        return res.redirect("/");
+    }
+    habitsArray.slice(index,1);
+    user.save();
+    //delete the habit from all habit database
+    const habit = await Habits.findByIdAndRemove(habitID);;
+    return res.redirect("/");
 }

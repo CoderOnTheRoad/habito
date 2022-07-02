@@ -12,7 +12,7 @@ module.exports.signInSignUp= async function(req,res){
             });
             user.save();   
         }
-        console.log(user);
+        // console.log(user);
         res.cookie("userCookie",user.id);
         res.cookie("userEmail",user.userEmail);
         return res.redirect("/");

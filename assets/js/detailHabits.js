@@ -13,7 +13,7 @@ const userHabits=JSON.parse(tableDataContainer.innerText);
 
 for(let i=0;i<userHabits.length;i++){
     const habit=userHabits[i];
-    console.log(habit);
+    // console.log(habit);
     let tr=document.createElement("tr");
     tr.setAttribute("id",`habitID-${habit._id}`);
     tr.setAttribute("scope","row");
