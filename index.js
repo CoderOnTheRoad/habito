@@ -18,7 +18,13 @@ app.set("layout extractStyles", true)
 app.use(express.urlencoded({require:false}));
 
 app.use(express.static("./assets"));//setting the static file location
-app.use(session({ secret:"hush",cookie: { maxAge: 60000 }}));
+app.use(session({ 
+    name:"habito",
+    secret:"hush",
+    savaUninitialized:true, //when the user is not logged i i dont want to store extra information in session cookie//
+    resave:false, //stops saving session cokie saving again and again in browser
+    cookie: { maxAge: 60000 }
+}));
 app.use(flash());
 app.use(customMware.flashMessage);
 app.use("/",require("./routers"));//set thr router path
