@@ -81,7 +81,7 @@ function changeStatusOnClick(element){
     const habitStatus=element.getAttribute("data-habitStatus");
     const habitDate=element.getAttribute("data-habitDate");
     const habitID=element.getAttribute("data-habitID");
-    fetch(`http://localhost:3000/habit/updateStatus?habitStatus=${habitStatus}&habitDate=${habitDate}&habitID=${habitID}`,{method:"post"})       // desired endpoint URL
+    fetch(`/habit/updateStatus?habitStatus=${habitStatus}&habitDate=${habitDate}&habitID=${habitID}`,{method:"post"})       // desired endpoint URL
     .then(response => response.json())       // convert response to JSON
     .then(json => {
         element.setAttribute("data-habitStatus",json.status);
