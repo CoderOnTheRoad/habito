@@ -1,6 +1,6 @@
 const express=require("express");
 const app=express();
-const port =process.env.port||3000; // in this port app will run
+const port =process.env.PORT||3000; // in this port app will run
 const expressejslayouts=require("express-ejs-layouts");//using express ejs layout to set up a layout of the app
 const cookieParser=require("cookie-parser");//requiring cookie parser
 const db=require("./config/mongoose");
