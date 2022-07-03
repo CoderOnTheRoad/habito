@@ -3,7 +3,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -60,4 +60,17 @@ td{
 }
 .status-not-done{
   background-color: red !important;
+}
+@media screen and (min-width: 834px) {
+  body {
+    background-size:100%;
+  }
+}
+#header-button-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 30vw;
+  justify-content: space-around;
+  align-items: center;
 }

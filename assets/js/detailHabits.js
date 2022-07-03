@@ -19,6 +19,7 @@ for(let i=0;i<userHabits.length;i++){
     tr.setAttribute("scope","row");
     let td=document.createElement("td");
     td.innerText=habit.habitName;
+    td.classList.add("table-dark");
     tr.appendChild(td);
     habitTableBody.appendChild(tr);
 

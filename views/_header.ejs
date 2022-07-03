@@ -1,13 +1,15 @@
-<nav class="navbar navbar-dark bg-dark" style="width:100vw ;position:sticky;top:0px;">
+<nav class="navbar navbar-dark bg-dark" style="width:100% ;position:sticky;top:0px; display: flex;flex-wrap: nowrap;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">Navbar</a>
-      <% if(locals.userCookie){ %>
-        <form class="d-flex" role="search" method="post" action="/user/logOut">
-          <button class="btn btn-outline-success" type="submit">Logout</button>
-        </form>
-        <% if(!locals.detailView){%> 
-        <a href="/habit/detailView"><button>Detail View</button></a>
-        <% } %> 
+      <a class="navbar-brand" href="/"><i class="fa-solid fa-dumbbell"></i> Habito</a>
+      <div id="header-button-container">
+        <% if(locals.userCookie){ %>
+          <% if(!locals.detailView){%> 
+            <a href="/habit/detailView"><button class="btn btn-outline-success">Detail View</button></a>
+          <% } %> 
+          <form class="d-flex" role="search" method="post" action="/user/logOut">
+            <button class="btn btn-outline-success" type="submit">Logout</button>
+          </form>
+      </div>
       <% }else{ %>  
       <form class="d-flex" role="search" method="post" action="/user/signInSignUp">
         <input class="form-control me-2" type="search" placeholder="Enter Your Email" aria-label="Search" name="email">
@@ -16,3 +18,9 @@
       <% } %> 
     </div>
 </nav>
+<!-- <% //if(locals.flash){ %> 
+<p style="color:red;background-color:gold">
+<%//=locals.flash.message%> 
+</p>
+<%// } %>  -->
+<!-- <script src="/js/header.js"></script> -->
