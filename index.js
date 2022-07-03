@@ -8,6 +8,7 @@ const db=require("./config/mongoose");
 const Noty = require("noty");
 const flash=require("connect-flash");
 const customMware=require("./config/connectFlashMiddleware");
+const MongoStore=require("connect-mongo");
 const session=require("express-session");
 app.set("view engine","ejs");//set the ejs as view engine
 app.set("views","./views");//set the views folder location
@@ -23,7 +24,11 @@ app.use(session({
     secret:"hush",
     savaUninitialized:true, //when the user is not logged i i dont want to store extra information in session cookie//
     resave:false, //stops saving session cokie saving again and again in browser
-    cookie: { maxAge: 60000 }
+    cookie: { maxAge: 60000 },
+    store:MongoStore.create({
+        mongoUrl:process.env.MONGODB_URI||"mongodb://localhost/habit-tracker",
+        autoRemove: "disabled",
+    }),
 }));
 app.use(flash());
 app.use(customMware.flashMessage);
