@@ -71,6 +71,6 @@ td{
   flex-direction: row;
   flex-wrap: nowrap;
   width: 30vw;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
