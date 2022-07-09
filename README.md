@@ -13,6 +13,7 @@ connect-mongo, mongoose, cookie-parser, dotenv, ejs, express, express-ejs-layout
 
 ## Features
 - Add multiple habits to track like reading a book, going to the gym etc
+- Multiple habits with sama nam can not be created (Case insensitive) e.g. If a habit with name "Gym" already exists you can nou create another habit with name "gym", "gYm", "gyM", "GYm", "gYM", "GyM" or "GYM".
 - Track each habit everyday. These are the 3 statuses of a habit:
     - Done - Mark the habit as done for a day
     - Not done - Mark the habit as not done for a day

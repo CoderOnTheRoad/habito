@@ -6,8 +6,15 @@ module.exports.addHabit= async function(req,res){
     if(req.cookies.userCookie){
         const id=req.cookies.userCookie;
         const habitName = req.body.habit;
-        const user=await Users.findById(id);
+        const user=await Users.findById(id).populate("userHabits");
+
         // console.log(user);
+        const userHabits=user.userHabits;
+        let habitAlreadyExists=false;
+        userHabits.map((habit)=>{if(habit.habitName.toLowerCase()==habitName.toLowerCase()){
+            habitAlreadyExists=true;
+        }});
+        if(habitAlreadyExists==false){
         const habit=await new Habits({
             habitName:habitName,
             user:user._id,
@@ -15,7 +22,11 @@ module.exports.addHabit= async function(req,res){
         user.userHabits.push(habit._id);
         user.save();
         habit.save();
-        return res.redirect("/")
+        return res.redirect("/");
+        }else{
+            req.flash("error","same habit already exists");
+            return res.redirect("/");
+        }
     }
 }
 

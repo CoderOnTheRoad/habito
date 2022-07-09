@@ -41,5 +41,16 @@
             }).show();
         </script>   
     <% } %>
+    <%if(locals.flash.error&& locals.flash.error.length>0){%>
+        <script>
+            new Noty({
+                theme:"sunset",
+                text:"<%=locals.flash.error%>",
+                type:"error",
+                layout: "topRight",
+                timeout:1500,
+            }).show();
+        </script>   
+    <% } %>
 </body>
 </html>
