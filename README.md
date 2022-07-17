@@ -81,6 +81,30 @@ connect-mongo, mongoose, cookie-parser, dotenv, ejs, express, express-ejs-layout
     </li>
  </ul>
  </li>
+  <li><h3>Habit creation</h3>
+ <ul>
+    <li><h4>Create new habit</h4>
+    <img src="./assets/images/add-new-habit.jpg"/>
+    </li>
+    <li><h4>newly added habit will be shown as a card where user can set status of the habit by picking a date </h4>
+    <img src="./assets/images/new-habit-card.jpg"/>
+    </li>
+    <li><h4>habit card options</h4>
+    <img src="./assets/images/habit-card-details.jpg"/>
+    </li>
+    <li><h4>habit name is case insensitive, user can't create habits with same name a notification will pop up saying this habit already exists </h4>
+    <img src="./assets/images/same-habit.jpg"/>
+    </li>
+ </ul>
+ </li>
+   <li><h3>Detail-view</h3>
+ <ul>
+    <li><h4>Detail view of habits for a week</h4>
+    <img src="./assets/images/detail-view.jpg"/>
+    </li>
+
+ </ul>
+ </li>
 </ol>
 
   
