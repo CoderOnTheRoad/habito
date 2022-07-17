@@ -66,6 +66,22 @@ connect-mongo, mongoose, cookie-parser, dotenv, ejs, express, express-ejs-layout
     └── layout.ejs
 
 ```
+## Features with details
+<ol>
+ <li><h3>Login</h3>
+ <ul>
+    <li><h4>log in with valid email ID</h4>
+    <img src="./assets/images/login-screen-habito.jpg"/>
+    </li>
+    <li><h4>shows invalid email notification if email id id invalid </h4>
+    <img src="./assets/images/invalid-email-screen-habito.jpg"/>
+    </li>
+    <li><h4>view after login</h4>
+    <img src="./assets/images/login-view-habito.jpg"/>
+    </li>
+ </ul>
+ </li>
+</ol>
 
   
 ## Git Clone

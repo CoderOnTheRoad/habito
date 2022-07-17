@@ -2,7 +2,6 @@
 function getNDayAgoDate(n) {
     return new Date(new Date().getTime() - n*24*60*60*1000).toISOString().slice(0,10);
  }
-
 const dateSelectorArray=document.getElementsByClassName("date");
 
 //shows the selector values of dates in the homepage
